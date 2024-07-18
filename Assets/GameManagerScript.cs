@@ -16,6 +16,8 @@ public class GameManagerScript : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
 
+    public GameObject bombParticle;
+
     private int score = 0;
 
     private int gameTimer = 0;
@@ -31,9 +33,10 @@ public class GameManagerScript : MonoBehaviour
         return gameOverFlag;
     }
 
-    public void Hit()
+    public void Hit(Vector3 position)
     {
         hitAudioSource.Play();
+        Instantiate(bombParticle, position, Quaternion.identity);
         score += 1;
     }
 

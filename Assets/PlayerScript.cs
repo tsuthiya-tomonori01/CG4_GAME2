@@ -106,7 +106,7 @@ public class PlayerScript : MonoBehaviour
         else
         {
             bulletTimer++;
-            if (bulletTimer > 20)
+            if (bulletTimer > 10)
             {
                 bulletTimer = 0;
             }

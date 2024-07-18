@@ -9,7 +9,7 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float moveSpeed = 3.0f;
+        float moveSpeed = 6.0f;
 
         rb.velocity = new Vector3(0, 0, moveSpeed);
 
@@ -19,7 +19,7 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnCollisionEnter(Collision other)
@@ -31,7 +31,7 @@ public class BulletScript : MonoBehaviour
             GameManager = GameObject.Find("GameManager");
             gameManagerScript = GameManager.GetComponent<GameManagerScript>();
 
-            gameManagerScript.Hit();
+            gameManagerScript.Hit(transform.position);
 
             Destroy(other.gameObject);
             Destroy(this.gameObject);
